@@ -1,0 +1,18 @@
+git commands 
+# 1. Commit your local changes
+git add .
+git commit -m "My local changes"
+
+# 2. Fetch remote
+git fetch origin
+
+# 3. Merge or rebase
+git merge origin/main    # OR git rebase origin/main
+
+# 4. Resolve conflicts if Git reports any
+git add <file>
+git commit               # for merge
+git rebase --continue    # for rebase
+
+# 5. Push changes to remote
+git push origin main
