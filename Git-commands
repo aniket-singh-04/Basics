@@ -1,18 +1,278 @@
-git commands 
+1️⃣ Basic Git Workflow to Sync Local and Remote
 # 1. Commit your local changes
 git add .
 git commit -m "My local changes"
 
-# 2. Fetch remote
+# 2. Fetch remote changes
 git fetch origin
 
-# 3. Merge or rebase
+
+
+| Command                 | What it fetches                      | Use case                              |
+| ----------------------- | ------------------------------------ | ------------------------------------- |
+| `git fetch origin`      | All branches from `origin`           | Good for syncing everything           |
+| `git fetch origin main` | Only the `main` branch from `origin` | Faster, when you only care about main |
+
+
+
+
+
+git fetch origin main
+
+What it does: Downloads the latest commits from the remote main branch (origin/main) but does not change your local branch.
+Updates your remote-tracking branch origin/main.
+Safe: Your local work is untouched.
+
+Example:
+# Fetch only the remote main branch
+git fetch origin main
+
+
+After this:
+Local main:   A---B
+Remote main:  A---B---C  (origin/main)
+
+
+Your local main still ends at B.
+You need to merge or rebase to bring in C:
+
+
+
+
+git merge origin/main
+# OR
+git rebase origin/main
+
+
+
+
+
+
+git pull origin main
+
+What it does: Combines fetch + merge in one step.
+Downloads the remote main branch and immediately tries to merge it into your local branch.
+Can cause conflicts immediately, because it modifies your local branch right away.
+
+Example:
+# Pull remote main and merge into local main
+git pull origin main
+
+
+After this:
+Local main:   A---B---C (merge commit if needed)
+
+You may need to resolve conflicts immediately.
+
+| Command                 | Fetches | Changes Local Branch? | Conflicts Possible? | Use Case                            |
+| ----------------------- | ------- | --------------------- | ------------------- | ----------------------------------- |
+| `git fetch origin main` | Yes     | No                    | No                  | Safe, review changes before merging |
+| `git pull origin main`  | Yes     | Yes (merge)           | Yes                 | Quick update of local branch        |
+
+
+
+
+Note: 
+| Situation                                                    | Action                                                    |
+| ------------------------------------------------------------ | --------------------------------------------------------- |
+| You have **pulled remote changes using `git pull`**          | Just resolve conflicts (if any) and push                  |
+| You have **local commits not pushed yet** and haven’t pulled | Use `git fetch` + `merge` or `rebase` manually            |
+| You want **clean, linear history for your local commits**    | Use `git fetch` + `git rebase origin/main` before pushing |
+
+
+
+
+
+
+
+
+
+# 3. Merge or rebase remote changes into local branch
 git merge origin/main    # OR git rebase origin/main
 
-# 4. Resolve conflicts if Git reports any
-git add <file>
+# 4. Resolve conflicts if any
+git add <file>           # mark conflicts resolved
 git commit               # for merge
 git rebase --continue    # for rebase
 
-# 5. Push changes to remote
+# 5. Push local changes to remote
 git push origin main
+
+Fetch Overview
+Command	What it fetches	Use case
+git fetch origin	All branches from origin	Good for syncing everything
+git fetch origin main	Only the main branch from origin	Faster, if you only care about main
+
+git fetch updates remote-tracking branches like origin/main but does not change your local branch.
+
+
+
+
+2️⃣ Conflict Resolution
+
+# My Project
+This is my local version.
+
+
+The remote README.md has this content:
+
+# My Project
+This is the remote version.
+
+
+You run:
+git pull origin main
+
+
+Git cannot automatically merge the changes because both changed the same line. You’ll see:
+<<<<<<< HEAD
+This is my local version.
+=======
+This is the remote version.
+>>>>>>> origin/main
+
+Understand the markers
+<<<<<<< HEAD → your local changes
+======= → separates local vs remote
+>>>>>>> origin/main → remote changes
+
+Git is basically asking:
+“Which version do you want to keep?”
+
+Step 2: Decide what to keep
+You have 3 options:
+
+1> Keep your local version only
+This is my local version.
+
+
+2> Keep remote version only
+This is the remote version.
+
+
+3> Combine both versions
+This is my local version.
+This is the remote version.
+
+
+
+
+Options to Resolve Conflicts
+Option 1: Keep your local version only (discard remote)
+git checkout --ours README.md
+git add README.md
+git commit -m "Keep local version of README.md"
+git push origin main
+
+
+--ours → keeps your local version
+git add → marks as resolved
+git commit → finalizes the merge
+git push → updates remote with your local version
+
+
+
+
+Option 2: Keep remote version only (discard local)
+git checkout --theirs README.md
+git add README.md
+git commit -m "Use remote version of README.md"
+git push origin main
+
+
+--theirs → keeps the remote version
+Local changes are discarded
+
+
+
+
+Option 3: Keep both (merge manually)
+
+Edit the file to combine both versions:
+
+This is my local version.
+This is the remote version.
+
+
+Remove all conflict markers (<<<<<<<, =======, >>>>>>>)
+
+Then run:
+git add README.md
+git commit -m "Merge local and remote changes in README.md"
+git push origin main
+
+
+Result: Both changes are now in the remote branch
+
+Tips after resolving conflicts
+Always remove the conflict markers before committing.
+After resolving, your branch is safe, and you can continue working normally.
+
+
+
+
+
+
+
+
+
+3️⃣ Git Merge vs Git Rebase
+Git Merge
+git merge origin/main
+
+
+Combines remote branch into your local branch
+Creates a merge commit if both branches have commits
+History is non-linear
+
+Example:
+
+Remote: A---B---C
+Local:      D---E
+After merge:
+          M  (merge commit)
+         / \
+A---B---C   D---E
+
+
+Pros:
+Safe, preserves history
+Easy for beginners
+
+Cons:
+History can get cluttered
+
+
+Git Rebase
+git rebase origin/main
+
+
+Moves your local commits on top of remote commits
+No merge commit is created
+History becomes linear
+
+Example:
+
+Remote: A---B---C
+Local:      D---E
+After rebase:
+A---B---C---D'---E'
+
+
+D' and E' are your local commits replayed on top of C
+
+Pros:
+Clean, linear history
+Easier to read
+
+Cons:
+Rewrites commits (new commit IDs)
+
+Can be tricky if there are conflicts
+
+Key Differences
+Feature         Merge	                              Rebase
+History        	Non-linear (merge commit)          	Linear (no merge commit)
+Commits	        Preserves original commits	        Rewrites local commits
+Conflicts       Resolve once during merge         	May need multiple resolutions
+Ideal use	      Safe, teamwork	                    Clean history, private commits
