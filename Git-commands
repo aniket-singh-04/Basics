@@ -37,18 +37,20 @@ Your local main still ends at B.
 You need to merge or rebase to bring in C:
 
 
+after fetch follow bellow one of command 
+
+git merge origin/main   // opposite --->   git merge --abort
+# OR 
+git rebase origin/main    // agar ye karte hai to rebse wali command chagengi 
+oppotie command is --->  git rebase --abort
 
 
-git merge origin/main
-# OR
-git rebase origin/main
 
 
 
 
-
-
-git pull origin main
+git pull origin main    or    git pull origin main --allow-unrelated-histories (Merge them anyway) 
+for git pull reset --->   git reset --hard ORIG_HEAD
 
 What it does: Combines fetch + merge in one step.
 Downloads the remote main branch and immediately tries to merge it into your local branch.
@@ -68,6 +70,11 @@ You may need to resolve conflicts immediately.
 | ----------------------- | ------- | --------------------- | ------------------- | ----------------------------------- |
 | `git fetch origin main` | Yes     | No                    | No                  | Safe, review changes before merging |
 | `git pull origin main`  | Yes     | Yes (merge)           | Yes                 | Quick update of local branch        |
+
+
+
+
+
 
 
 
@@ -99,9 +106,9 @@ git rebase --continue    # for rebase
 git push origin main
 
 Fetch Overview
-Command	What it fetches	Use case
-git fetch origin	All branches from origin	Good for syncing everything
-git fetch origin main	Only the main branch from origin	Faster, if you only care about main
+Command	                  What it fetches	                Use case
+git fetch origin	        All branches from origin	      Good for syncing everything
+git fetch origin main       Only the main branch from origi       Faster, if you only care about main
 
 git fetch updates remote-tracking branches like origin/main but does not change your local branch.
 
@@ -271,8 +278,8 @@ Rewrites commits (new commit IDs)
 Can be tricky if there are conflicts
 
 Key Differences
-Feature         Merge	                              Rebase
+Feature             Merge	                              Rebase
 History        	Non-linear (merge commit)          	Linear (no merge commit)
-Commits	        Preserves original commits	        Rewrites local commits
-Conflicts       Resolve once during merge         	May need multiple resolutions
-Ideal use	      Safe, teamwork	                    Clean history, private commits
+Commits	          Preserves original commits	          Rewrites local commits
+Conflicts           Resolve once during merge         	May need multiple resolutions
+Ideal use	          Safe, teamwork	                    Clean history, private commits
