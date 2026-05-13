@@ -1,0 +1,240 @@
+C++
+Arrays:
+ * size(): Returns the number of elements in the array.
+ * empty(): Checks if the array is empty (has no elements).
+ * at(index): Accesses the element at the specified index (safe version).
+ * operator[]: Accesses the element at the specified index (non-safe version).
+ * front(): Returns the first element of the array.
+ * back(): Returns the last element of the array.
+ * begin(): Returns an iterator pointing to the beginning of the array.
+ * end(): Returns an iterator pointing to one past the end of the array.
+ * rbegin(): Returns a reverse iterator pointing to the last element of the array.
+ * rend(): Returns a reverse iterator pointing to one before the beginning of the array.
+ * data(): Returns a pointer to the underlying array data.
+ * insert(position, value): Inserts a value at the specified position.
+ * erase(position): Erases the element at the specified position.
+ * erase(begin, end): Erases a range of elements.
+ * push_back(value): Adds a value to the end of the array.
+ * pop_back(): Removes the last element from the array.
+ * clear(): Removes all elements from the array.
+ * swap(other): Swaps the contents of the array with another array.
+Strings:
+ * size(): Returns the number of characters in the string.
+ * empty(): Checks if the string is empty (has no characters).
+ * at(index): Accesses the character at the specified index (safe version).
+ * operator[]: Accesses the character at the specified index (non-safe version).
+ * front(): Returns the first character of the string.
+ * back(): Returns the last character of the string.
+ * begin(): Returns an iterator pointing to the beginning of the string.
+ * end(): Returns an iterator pointing to one past the end of the string.
+ * rbegin(): Returns a reverse iterator pointing to the last character of the string.
+ * rend(): Returns a reverse iterator pointing to one before the beginning of the string.
+ * data(): Returns a pointer to the underlying character data.
+ * insert(position, value): Inserts a string or character at the specified position.
+ * erase(position): Erases the character at the specified position.
+ * erase(begin, end): Erases a range of characters.
+ * append(value): Appends a string or character to the end of the string.
+ * clear(): Removes all characters from the string.
+ * swap(other): Swaps the contents of the string with another string.
+ * find(value): Finds the first occurrence of a substring or character.
+ * rfind(value): Finds the last occurrence of a substring or character.
+ * substr(pos, len): Extracts a substring from the string.
+ * compare(other): Compares the string with another string.
+ * c_str(): Returns a null-terminated C-style string representation.
+
+
+
+
+
+Python
+Arrays (Lists):
+ * len(list): Returns the number of elements in the list.
+ * list[index]: Accesses the element at the specified index.
+ * list.append(value): Adds a value to the end of the list.
+ * list.insert(index, value): Inserts a value at the specified position.
+ * list.pop(index=None): Removes the element at the specified index (or the last element if index is not provided).
+ * list.remove(value): Removes the first occurrence of the specified value.
+ * list.clear(): Removes all elements from the list.
+ * list.extend(other): Appends the elements of another list to the end.
+ * list.index(value): Returns the index of the first occurrence of the specified value.
+ * list.count(value): Returns the number of occurrences of the specified value.
+ * list.sort(): Sorts the elements of the list in ascending order.
+ * list.reverse(): Reverses the order of the elements in the list.
+ * list.copy(): Returns a shallow copy of the list.
+Strings:
+ * len(string): Returns the number of characters in the string.
+ * string[index]: Accesses the character at the specified index.
+ * string.find(substring): Finds the first occurrence of a substring.
+* string.rfind(substring): Finds the last occurrence of a substring.
+ * string.startswith(prefix): Checks if the string starts with the specified prefix.
+ * string.endswith(suffix): Checks if the string ends with the specified suffix.
+ * string.replace(old, new): Replaces all occurrences of the old substring with the new substring.
+ * string.upper(): Converts all characters in the string to uppercase.
+ * string.lower(): Converts all characters in the string to lowercase.
+ * string.split(sep=None): Splits the string into a list of substrings based on the specified separator.
+ * string.join(iterable): Joins the elements of an iterable into a string using the string as the separator.
+ * string.strip(): Removes leading and trailing whitespace from the string.
+ * string.lstrip(): Removes leading whitespace from the string.
+ * string.rstrip(): Removes trailing whitespace from the string.
+
+
+
+
+
+
+JavaScript
+Arrays:
+ * array.length: Returns the number of elements in the array.
+ * array[index]: Accesses the element at the specified index.
+ * array.push(value): Adds a value to the end of the array.
+ * array.unshift(value): Adds a value to the beginning of the array.
+ * array.pop(): Removes the last element from the array and returns it.
+ * array.shift(): Removes the first element from the array and returns it.
+ * array.splice(start, deleteCount, item1, item2, ...): Removes elements from the array and inserts new elements at the specified position.
+ * array.slice(start, end): Extracts a portion of the array.
+ * array.concat(array2, array3, ...): Joins arrays together.
+ * array.join(separator): Joins the elements of the array into a string using the specified separator.
+ * array.reverse(): Reverses the order of the elements in the array.
+ * array.sort(compareFunction): Sorts the elements of the array in ascending order based on the optional compare function.
+ * array.forEach(callback): Calls the specified callback function for each element in the array.
+ * array.map(callback): Creates a new array by calling the specified callback function for each element in the array.
+ * array.filter(callback): Creates a new array containing only the elements that pass the test implemented by the specified callback function.
+ * array.find(callback): Returns the first element in the array that passes the test implemented by the specified callback function.
+ * array.findIndex(callback): Returns the index of the first element in the array that passes the test implemented by the specified callback function.
+Strings:
+ * string.length: Returns the number of characters in the string.
+ * string[index]: Accesses the character at the specified index.
+ * string.charAt(index): Returns the character at the specified index.
+ * string.charCodeAt(index): Returns the Unicode code point of the character at the specified index.
+ * string.indexOf(substring, start): Finds the first occurrence of a substring.
+ * string.lastIndexOf(substring, start): Finds the last occurrence of a substring.
+ * string.startsWith(prefix, start): Checks if the string starts with the specified prefix.
+ * string.endsWith(suffix, length): Checks if the string ends with the specified suffix.
+ * string.replace(searchValue, newValue): Replaces all occurrences of the searchValue with the newValue.
+ * string.toUpperCase(): Converts all characters in the string to uppercase.
+ * string.toLowerCase(): Converts all characters in the string to lowercase.
+ * string.split(separator, limit): Splits the string into an array of substrings based on the specified separator.
+ * **`string.join(separator
+
+
+
+
+
+
+ 1. Array Methods
+
+C++:
+(sizeof(arr)/sizeof(arr[0])): it is use for lenth of aaray in c++
+push_back(value): Adds an element to the end.
+pop_back(): Removes the last element.
+size(): Returns the number of elements.
+clear(): Removes all elements.
+at(index): Accesses the element at the given index.
+front()/back(): Returns the first/last element.
+
+JavaScript:
+Array:
+push(element): Adds an element to the end.
+pop(): Removes the last element.
+shift(): Removes the first element.
+unshift(element): Adds an element at the beginning.
+slice(start, end): Returns a portion of the array.
+splice(start, deleteCount, item1, item2, ...): Adds/removes elements from the array.
+map(function): Creates a new array with the result of calling a function on every element.
+filter(function): Creates a new array with elements that pass a test.
+reduce(function): Reduces the array to a single value.
+
+
+Python:
+List:
+append(element): Adds an element to the end.
+pop(): Removes the last element.
+insert(index, element): Adds an element at a specific index.
+remove(element): Removes the first occurrence of the element.
+slice[start:end]: Retrieves part of the list.
+sort(): Sorts the list.
+extend(list): Adds multiple elements to the end of the list.
+map(function, list): Applies a function to all list elements.
+
+
+
+2. String Methods
+C++:
+length()/size(): Returns the length of the string.
+append(str): Appends a string.
+substr(pos, len): Returns a substring.
+find(substring): Finds the position of the first occurrence of a substring.
+erase(pos, len): Erases a portion of the string.
+replace(pos, len, str): Replaces part of the string.
+
+JavaScript:
+String:
+length: Returns the length of the string.
+toUpperCase(): Converts to uppercase.
+toLowerCase(): Converts to lowercase.
+slice(start, end): Extracts a part of the string.
+substring(start, end): Similar to slice but does not accept negative indices.
+replace(searchValue, newValue): Replaces a substring.
+includes(substring): Checks if the string contains the substring.
+split(separator): Splits the string into an array of substrings.
+
+Python:
+String:
+len(): Returns the length of the string.
+upper(): Converts to uppercase.
+lower(): Converts to lowercase.
+replace(old, new): Replaces a substring.
+find(substring): Finds the index of the substring.
+split(delimiter): Splits the string into a list.
+strip(): Removes leading and trailing whitespace.
+format(): Formats a string with placeholders.
+
+
+3. Math Functions
+C++ (cmath):
+sqrt(x): Returns the square root.
+pow(base, exp): Returns the result of base raised to exp.
+abs(x): Returns the absolute value.
+sin(x), cos(x), tan(x): Trigonometric functions.
+log(x): Returns the natural logarithm.
+
+JavaScript (Math):
+Math.sqrt(x): Returns the square root.
+Math.pow(base, exp): Raises base to the power of exp.
+Math.abs(x): Returns the absolute value.
+Math.max(x1, x2, ...): Returns the largest number.
+Math.random(): Returns a pseudo-random number between 0 and 1.
+Math.floor(x): Rounds down.
+
+Python (math):
+math.sqrt(x): Returns the square root.
+math.pow(base, exp): Returns base raised to exp.
+math.fabs(x): Returns the absolute value.
+math.sin(x), math.cos(x), math.tan(x): Trigonometric functions.
+math.log(x): Returns the natural logarithm.
+
+4. DOM Methods (JavaScript Only):
+JavaScript:
+document.getElementById(id): Returns the element with the specified id.
+document.querySelector(selector): Returns the first element that matches the selector.
+element.addEventListener(event, function): Adds an event listener to an element.
+element.innerHTML: Gets/sets the HTML content of an element.
+element.style: Accesses or modifies inline styles of an element.
+document.createElement(tagName): Creates a new HTML element.
+element.appendChild(child): Appends a child element.
+
+
+5. STL (Standard Template Library) Functions in C++
+Containers:
+std::vector:
+push_back(), pop_back(): Add/remove elements.
+size(), empty(): Return size or check if empty.
+std::map:
+insert(key, value): Inserts key-value pair.
+erase(key): Removes the element with the specified key.
+find(key): Finds an element by key.
+[]: Access or assign values by key.
+std::set:
+insert(element): Adds an element.
+erase(element): Removes an element.
+find(element): Checks for existence of an element.

@@ -1,0 +1,8 @@
+long num = 123456;
+    int lenth = log10(num) + 1;
+    cout<<lenth<<endl;
+    string str = to_string(num);
+    cout<<str<<endl;
+    cout<<"ram"<<typeid(str).name()<<endl;
+    int len = str.length();
+    cout<<len<<endl;
