@@ -283,3 +283,117 @@ History        	Non-linear (merge commit)          	Linear (no merge commit)
 Commits	          Preserves original commits	          Rewrites local commits
 Conflicts           Resolve once during merge         	May need multiple resolutions
 Ideal use	          Safe, teamwork	                    Clean history, private commits
+
+
+
+
+
+
+Adding more commands
+
+(git merger file name) this is used for the merge a branch , branch merger in that branch you present
+(git branch -M new branch) this is used for changing their exisiting branch name
+(git branch -u origin brnch name) this is used for the push commits
+(git reset --hard commit id(give commit id where you go ) ) for delete a commit 
+(git reset --soft commit id(give commit id where you go))for delete only commit id but staged and code me rahega
+(git reset commit id )for delet commit id and staged se delete hoga but code me rahega and also going at that commit
+(git clone copied url name )this is used for clone repositery in aur system
+(git fetch) for taking other contributer commit 
+(git merge origin/main branch name) this is used for changing originally in their code by the merging
+(git pull) is used for fetching and mergingh       
+(git reflog) is used for getting all commit id 
+(git checkout head commit id )it is used for going that peritcular commit id by the head
+(git checkout head~1,0...) is aslo used
+(git checkout main) for point the main 
+(git revert commit id or head~0,1,.. of git revert head~3..head(it is used for range delete from head 0 
+to 2 and it create diff. id's))this is used for reset github code at that id 
+(git revert --no-commit head~3..) it is used for only one commit id in range reset github commits
+(git revert --abort) for stop this revert
+(git revert --continue) for continue this revert
+if two changes happens one changes from contrubuter and other your  changes then if you pull code then 
+conflict create then conflict create then resolve ki kaun sa code rukhana hai then commit and push 
+ye conflict branches ke bich me bhi ho sakta hai agar dono branches me same file and line pe changes
+ kiya gaya ho to and usko merge kiya jai to 
+(git stash -m "message ")for stash measn not commit but half changes go in stash list 
+(git stash apply index ) for applying the stach code 
+(git stash drop index) used for clear stash or (git stash clear ) for clear all stash
+(git cherry-pick commit id ) used for merging or changing perticular commit
+(git rm --cached file name ) this is used for removing the file(who is previously tracked) from tracking git 
+(git rm --cached -r folder name) this if for folder
+and them add and commit for above 2 line code runing
+(git commit -am "message")This is used for commit without manual staging
+(git chekout commit id or git checkout cmmit id and file name)it is used for reach at that commit id rather 
+then deleted or not deleted that commit 
+(git config --global -e) it is used for open file of git where we change the email and userName
+(git switch branch Name) it is used for switching the branch 
+(git switch -C branch Name) it is used for creating new branch an also switch
+(git revert commit id -m1) is is used for revert the merger and -m1 is write for going at that place
+
+
+Terminal and Git commands
+
+(q): Exit commands like git log and return to the terminal.
+(history -c): Clear command history in Git Bash or Linux.
+(Ctrl + Shift + T): Reopen a previously closed terminal tab.
+(pwd): Show the current working directory path.
+(mkdir <folder_name>): Create a new directory (e.g., mkdir aniekt ).
+(touch <file_name>): Create a new file (e.g., touch file. txt ).
+
+
+Git Basics
+
+(git init): Initialize a new Git repository.
+(git add <file_name>): Stage a specific file for commit. Use git (add .) to stage all.
+(git restore --staged <file_name>): Unstage a file.
+(git status): Check the status of staged and unstaged files. Use git (status -s) for a shortcut.
+(git commit -m "message"): Commit changes with a message.
+(git checkout <commit_id>): Checkout to a specific commit ID.
+(git log): View the commit history.
+if we checking the git log then use (q) for the going the normal terminal
+(git log --all): View commit history across all branches.
+(git log --all --oneline): for used to seen all comit in shortcut
+(git log --oneline --graph): View a compact graphical commit history.
+(git branch <branch_name>): Create a new branch.
+(git branch): List all branches.
+(git checkout <branch_name>): Switch to a specific branch.
+(git branch --delete <branch_Name>) for delteting branch when we can not changes apply in that branch
+(git branch -D <branch_name>): Force delete a branch. or any condition delete
+(git merge <branch_name>): Merge a branch into the current branch.
+
+
+
+Branch Operations
+
+(git branch -M <new_branch_name>): Rename the current branch.
+(git branch -u origin <branch_name>): Set the upstream branch for push.
+(git reset --hard <commit_id>): Reset the repo to a specific commit (loses changes).
+(git reset --soft <commit_id>): Reset commit but keep staged changes.
+(git reset <commit_id>): Reset commit and unstage changes, but keep them in the working directory.
+(git clone <repo_url>): Clone a remote repository.
+(git fetch): Fetch changes from a remote repository.
+(git pull): Fetch and merge changes from a remote repository.
+(git reflog): View the history of commits, including commit IDs.
+(git checkout HEAD <commit_id>): Checkout to a specific commit using HEAD.
+(git revert <commit_id>): Create a new commit that undoes a specific commit.
+(git revert --no-commit <commit_id>): Revert a commit without auto-committing.
+(git revert --abort): Abort a revert operation.
+(git revert --continue): Continue after resolving a revert conflict.
+
+
+
+
+Stashing & Conflict Resolution
+
+(git stash -m "message"): Stash uncommitted changes.
+(git stash apply <stash_index>): Apply a specific stash.
+(git stash drop <stash_index>): Remove a specific stash. Use git stash clear to remove all.
+(git cherry-pick <commit_id>): Apply a specific commit from another branch.
+(git rm --cached <file_name>): Untrack a file (remove from Git index).
+(git commit -am "message"): Commit all changes without manually staging files.
+(git config --global -e): Edit Git configuration (e.g., set username/email).
+(git switch <branch_name>): Switch to an existing branch.
+(git switch -C <branch_name>): Create and switch to a new branch.
+(git revert -m 1 <commit_id>): Revert a merge commit (keep the first parent).
+
+
+
