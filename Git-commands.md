@@ -49,7 +49,7 @@ oppotie command is --->  git rebase --abort
 
 
 
-git pull origin main    or    git pull origin main --allow-unrelated-histories (Merge them anyway) 
+git pull origin main    or    git pull origin main --allow-unrelated-histories (Merge them anyway or This tells Git to merge even though histories differ.) 
 for git pull reset --->   git reset --hard ORIG_HEAD
 
 What it does: Combines fetch + merge in one step.
